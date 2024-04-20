@@ -18,11 +18,11 @@ export class AuthService {
       firstName: data.firstName,
       lastName: data.lastName,
       phoneNumber:data.phoneNumber,
-      registrationNumber:data.registrationNumber,
+      // registrationNumber:data.registrationNumber,
       address1:data.address1,
       address2:data.address2,
       userName:data.userName,
-      role:data.role,
+      // role:data.role,
       profileImage:data.profileImage,
       password: newPassword,
     });

@@ -1,5 +1,6 @@
 import {
     IsEmail,
+    IsNumber,
     IsString,
     Length,
 
@@ -15,11 +16,11 @@ import {
     @IsString()
     lastName: string;
 
-    @IsString()
+    @IsNumber()
     phoneNumber: number;
 
-    @IsString()
-    registrationNumber: number;
+    // @IsString()
+    // registrationNumber: number;
 
     @IsString()
     address1: string;
@@ -30,8 +31,8 @@ import {
     @IsString()
     userName: string;
 
-    @IsString()
-    role: string;
+    // @IsString()
+    // role: string;
 
     @IsString()
     profileImage: string;

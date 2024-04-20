@@ -6,11 +6,12 @@ export const validationMiddleware = (
   dtoType: any,
   value: "body" | "query" | "params" = "body"
 ) => {
+  console.log(value)
   return async (req: Request, res: Response, next: NextFunction) => {
     const errors = await validate(plainToInstance(dtoType, req[value]), {
       skipMissingProperties: false,
     });
-    console.log(errors);
+    // console.log('errors',errors);  
     if (errors.length > 0) {
       const message = errors
         .map((err: ValidationError) => Object.values(err.constraints!))

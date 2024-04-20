@@ -9,11 +9,11 @@ export interface UserAttributes {
   password: string;
   isVerified: boolean | undefined;
   phoneNumber:number;
-  registrationNumber:number;
+  registrationNumber?:number;
   address1:string;
   address2?:string;
   userName:string;
-  role:string;
+  role?:string;
   profileImage?:string;
   createdAt?: Date;
   updatedAt?: Date;
@@ -34,11 +34,11 @@ export class User
   public password!: string;
   public isVerified: boolean | any;
   public phoneNumber!: number;
-  public registrationNumber!: number;
+  public registrationNumber: number;
   public address1!: string;
   public address2: string;
   public userName!: string;
-  public role!: string;
+  public role: string;
   public profileImage!: string;
 
   
@@ -77,12 +77,12 @@ User.init(
       defaultValue: false,
     },
     phoneNumber: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.BIGINT,
       allowNull: false,
     },
     registrationNumber: {
-      type: DataTypes.NUMBER,
-      allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     address1: {
       type: DataTypes.STRING,
@@ -98,7 +98,8 @@ User.init(
     },
     role: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue:'member'
     },
     profileImage: {
       type: DataTypes.STRING,
